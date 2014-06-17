@@ -44,7 +44,7 @@ if (!file.exists("./tmp/step1.csv")) {
   names(csv6) <- names
   
   message("Getting only desired columns")
-  desired_columns <- grepl("^(Activity|Subject|.+(mean|std)\\(\\))$",names)
+  desired_columns <- grepl("^(Activity|Subject|.+(mean|std)\\(\\))",names)
   
   message("Deleting colums that we won't work with")
   csv7 <- csv6[,desired_columns]
@@ -66,12 +66,13 @@ activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt", header=FALS
 rows <- dim(agg)[1]
 
 message("Replacing activity labels")
+activity_col <- ncol(agg)-1
 for (i in 1:rows) {
-  agg[i,21] <- activity_labels[agg[i,21],2]
+  agg[i,activity_col] <- activity_labels[agg[i,activity_col],2]
 }
 
 # Deleting duplicated columns product of aggregate function
-agg <- agg[,3:22]
+agg <- agg[,3:ncol(agg)]
 
 message("Saving tidy dataset on main folder")
 write.table(agg, "tidy-dataset.txt")
