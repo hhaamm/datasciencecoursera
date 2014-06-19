@@ -17,7 +17,7 @@ The original (un-tidy) data is on the folder "UCI HAR Dataset".
 
 The run_analysis.R script takes only the mean and std measurements of that data and executes the mean of every measurement for each volunteeer and for each activity.
 
-The result is a tidy dataset containing one row for every volunteer and activity combination. The tidy dataset has 68 columns (comma separated, the file is a CSV). Of those columns, 66 are the mean of a measurement and the other two identifies the activity and the volunteer (Subject).
+The result is a tidy dataset containing one row for every volunteer and activity combination. The tidy dataset has 68 columns, and the values and column names are separated by spaces. Of those columns, 66 are the mean of a measurement and the other two identifies the activity and the volunteer (Subject).
 
 Data transformation steps
 -------------------------
@@ -109,3 +109,8 @@ The final dataset includes this 68 variables:
 | fBodyBodyGyroJerkMag-mean() | Mean frequency of magnitude of body gyroscope jerk measurement.
 | Activity | The activity peformed.
 | Subject | The ID of the subject.
+
+Tidy dataset file
+-----------------
+
+    tidy-dataset.txt
