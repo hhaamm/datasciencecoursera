@@ -34,9 +34,12 @@ If you want to run the script, you will need:
 
 - Download this folder into your local computer.
 
-- Start R and set your working directory in the same directory that this README file is in.
-
 - You need writing permissions in the cloned folder, because the script uses a cache mechanism, which was very useful in development, because the initial raw data loading is very expensive. A /tmp/ folder will be created in the same folder that this file is.
+
+Execution
+---------
+
+- Start R and set your working directory in the same directory that this README file is in.
 
 - In R, execute this code:
 
@@ -45,4 +48,4 @@ If you want to run the script, you will need:
 Code book
 ---------
 
-The code book explains the transformations performed and the resulting data variables.
+The file CodeBook.md explains the transformations performed and the resulting data variables.
