@@ -14,6 +14,18 @@ The run_analysis.R script takes only the mean and std measurements of that data 
 
 The result is a tidy dataset containing one row for every volunteer and activity combination. The tidy dataset has 68 columns (comma separated, the file is a CSV). Of those columns, 66 are the mean of a measurement and the other two identifies the activity and the volunteer (Subject).
 
+Data transformation steps
+-------------------------
+
+The run_analysis.R script makes the transformations mentioned below:
+
+1. Loads all the training and test dataset and merges into one data frame.
+2. Load the features.txt file (which contains the measurements names) and assign this values to the column names. Additionally, it adds the "Activity" and "Subject" column names.
+3. It creates a new dataset containing only the mean and standard deviation measures of the merged dataset.
+4. Because the previous steps are a bit expensive in load time, it saves a temporal result in a tmp folder (which is created if it doesn't exist). This is useful to accelerate the script development.
+5. It runs the aggregate function over the saved data frame to group all the rows by activity and subject and execute the mean function over each of the row groups, returning a row for every group and creating a new tidy dataset.
+6. Deletes the first two columns (the aggregate function, apparently, adds those two columns to the first part of the dataset).
+
 
 Variables
 ---------
