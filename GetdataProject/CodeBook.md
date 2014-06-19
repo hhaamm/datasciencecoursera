@@ -3,11 +3,24 @@ Code Book: Tidy UCI HAR Dataset
 
 This dataset is derived from the "Human Activity Recognition Using Smartphones Data Set" which is included in the "UCI HAR Dataset" directory, originally downloaded from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones.
 
+Data background
+---------------
+
+The experiment is carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz.
+
+The original (un-tidy) data is on the folder "UCI HAR Dataset".
+
+The run_analysis.R script takes only the mean and std measurements of that data and executes the mean of every measurement for each volunteeer and for each activity.
+
+The result is a tidy dataset containing one row for every volunteer and activity combination. The tidy dataset has 68 columns (comma separated, the file is a CSV). Of those columns, 66 are the mean of a measurement and the other two identifies the activity and the volunteer (Subject).
+
 
 Variables
 ---------
   
-This dataset mantains the variables of the previous dataset, only modifying the variable names of Activity and Subject
+This dataset mantains the variables of the previous dataset, only modifying the variable names of Activity and Subject.
+
+The final dataset includes this 68 variables:
 
 | Variable name | Detail
 | ------------- |---------
@@ -75,6 +88,7 @@ This dataset mantains the variables of the previous dataset, only modifying the 
 | fBodyBodyAccJerkMag-std() | Standard deviation of frequency of body acceleration jerk magnitude.
 | fBodyBodyGyroMag-mean() | Mean frequency of magnitude of body gyroscope measurement.
 | fBodyBodyGyroMag-std() | Standard deviation of frequency of magnitude of body gyroscope measurement.
+| fBodyBodyGyroJerkMag-mean() | Mean frequency of magnitude of body gyroscope jerk measurement.
 | fBodyBodyGyroJerkMag-mean() | Mean frequency of magnitude of body gyroscope jerk measurement.
 | Activity | The activity peformed.
 | Subject | The ID of the subject.
